@@ -1,3 +1,100 @@
-.card p{
-    color: blue;
+.card {
+    background-color: var(--card-bg);
+
+    width: 55%;
+    border-radius: 0.4em;
+    margin-top: 0.4em;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+}
+
+.task-name {
+    font-weight: normal;
+}
+
+.card-body {
+    background-color: var(--card-bg);
+    border-radius: 0.3em;
+}
+
+.task-description {
+    margin-left: 4.1em;
+    margin-right: 4em;
+    color: var(--darkgrey);
+}
+
+.card :hover {
+    cursor: pointer;
+}
+
+.card button {
+    min-width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-checkbox{
+    border-style: solid;
+    margin: 1em;
+    border-radius: 0.6em;
+    border-color: var(--darkgrey);
+    background: none;
+}
+
+
+.task-checkbox svg{
+    padding: 0.2em;
+    fill: none;
+}
+
+.task-checkbox svg:hover{
+    fill: var(--darkgrey);
+    cursor: pointer;
+}
+
+
+.task-edit {
+    width: 2em;
+    height: 2em;
+    margin: 1em;
+    border: none;
+    background: none;
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+.task-edit svg {
+    padding: 0.3em;
+    fill: none;
+}
+
+.task-edit :hover{
+    background:  var(--lightgrey);
+    cursor: pointer;
+    border-radius: 1em;
+    border: none;
+}
+
+.card:hover .task-edit svg{
+    fill: var(--darkgrey);
+}
+
+/* Telas grandes */
+@media only screen and (min-width: 600px) {
+    .card {
+        font-size: 12px;
+    }
+}
+
+/* Telas pequenas */
+@media only screen and (max-width: 600px) {
+    .card {
+        font-size: 14px;
+        width: 90%;
+    }
 }

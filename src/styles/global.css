@@ -3,8 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 :root {
-    --bg:#ECE9E9;
+    --card-bg: white;
+    --darkgrey: #8a8a8a;
+    --lightgrey: #EAEAEA;
+    --mediumgrey: #DBDBDB;
 }
