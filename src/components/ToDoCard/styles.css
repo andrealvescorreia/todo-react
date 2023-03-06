@@ -4,6 +4,7 @@
     width: 55%;
     border-radius: 0.4em;
     margin-top: 0.4em;
+    
 }
 
 .card-header {
@@ -13,6 +14,7 @@
 
 .task-name {
     font-weight: normal;
+    line-height: 110%;
 }
 
 .card-body {

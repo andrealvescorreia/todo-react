@@ -8,7 +8,10 @@
 
 :root {
     --card-bg: white;
-    --darkgrey: #8a8a8a;
-    --lightgrey: #EAEAEA;
+
+    --darkgrey: #808080;
+    --mediumdarkgrey: #CACACA;
     --mediumgrey: #DBDBDB;
+    --lightgrey: #EAEAEA;
+    
 }
