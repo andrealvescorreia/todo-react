@@ -4,7 +4,12 @@
     width: 55%;
     border-radius: 0.4em;
     margin-top: 0.4em;
-    
+
+}
+
+.completed .task-name {
+    color: var(--darkgrey);
+    text-decoration: line-through;
 }
 
 .card-header {
@@ -40,7 +45,7 @@
     justify-content: center;
 }
 
-.task-checkbox{
+.task-checkbox {
     border-style: solid;
     margin: 1em;
     border-radius: 0.6em;
@@ -49,12 +54,12 @@
 }
 
 
-.task-checkbox svg{
+.task-checkbox svg {
     padding: 0.2em;
     fill: none;
 }
 
-.task-checkbox svg:hover{
+.task-checkbox svg:hover {
     fill: var(--darkgrey);
     cursor: pointer;
 }
@@ -75,14 +80,14 @@
     fill: none;
 }
 
-.task-edit :hover{
-    background:  var(--lightgrey);
+.task-edit :hover {
+    background: var(--lightgrey);
     cursor: pointer;
     border-radius: 1em;
     border: none;
 }
 
-.card:hover .task-edit svg{
+.card:hover .task-edit svg {
     fill: var(--darkgrey);
 }
 
