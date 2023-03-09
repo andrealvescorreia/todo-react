@@ -1,16 +1,11 @@
 import './styles.css'
 import React, { useState } from 'react'
 
-export function ToDoCard({ task, taskChanger }) {
+export function ToDoCard({ task }) {
     const [taskCompleted, setTaskCompleted] = useState(task.completed);
 
     function handleCheckBoxClick() {
-        if (taskCompleted == true) {
-            setTaskCompleted(false)
-        } else {
-            setTaskCompleted(true)
-        }
-        taskChanger(taskCompleted)
+        setTaskCompleted(!taskCompleted)
     }
 
     return (
