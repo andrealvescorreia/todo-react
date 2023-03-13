@@ -14,7 +14,7 @@ const exampleTasks = [
 const TasksProvider = ({children}) => {
     const [tasks, setTasks] = React.useState(exampleTasks)
     return (
-        <TasksContext.Provider value={{tasks}}>
+        <TasksContext.Provider value={{tasks, setTasks}} >
             {children}
         </TasksContext.Provider>
     )
