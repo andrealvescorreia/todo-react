@@ -8,6 +8,10 @@ const exampleTasks = [
         description: "Uma descricao muito grande de uma tarefa que precisa ser feita o quanto antes! Mais texto é necessário para que essa caixa tenha mais de uma linha de texto.",
         completed: true,
         timeOfInclusion: '1'
+    },
+    {
+        name: "Tarefa 3",
+        timeOfInclusion: '2'
     }
 ]
 
