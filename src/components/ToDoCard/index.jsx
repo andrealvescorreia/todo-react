@@ -1,15 +1,31 @@
 import './styles.css'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useTasksContext } from "../../providers/TasksProvider"
 
 export function ToDoCard({ task }) {
-    const [taskCompleted, setTaskCompleted] = useState(task.completed);
+    const [thisTask, setThisTask] = useState(task)
+
+    const {tasks, setTasks} = useTasksContext();
+
+
+    
 
     function handleCheckBoxClick() {
-        setTaskCompleted(!taskCompleted)
+        setThisTask({
+            ...thisTask, 
+            completed: !thisTask.completed
+        })   
     }
 
+    useEffect(() => {
+        let thisTaskIndex = tasks.findIndex(taskItem => taskItem.timeOfInclusion === thisTask.timeOfInclusion)
+        let updatedTasks = [...tasks]
+        updatedTasks[thisTaskIndex] = thisTask
+        setTasks(updatedTasks)
+    }, [thisTask])
+
     return (
-        <div className={"card" + (taskCompleted ? " completed" : "")}>
+        <div className={"card" + (thisTask.completed ? " completed" : "")}>
             <div className="card-header">
                 <button className="task-checkbox" type="button" onClick={handleCheckBoxClick}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -17,7 +33,7 @@ export function ToDoCard({ task }) {
                     </svg>
                 </button>
 
-                <h2 className="task-name">{task.name}</h2>
+                <h2 className="task-name">{thisTask.name}</h2>
 
                 <button className="task-edit" type="button" >
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -27,7 +43,7 @@ export function ToDoCard({ task }) {
             </div>
 
             <div className="card-body">
-                <p className="task-description">{task.description}</p>
+                <p className="task-description">{thisTask.description}</p>
             </div>
 
         </div>
