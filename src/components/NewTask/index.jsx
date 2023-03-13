@@ -1,8 +1,8 @@
 import { useTasksContext } from "../../providers/TasksProvider"
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 export function NewTask(){
-    const {tasks, setTasks} = useTasksContext();
+    const {setTasks} = useTasksContext();
 
     const [taskName, setTaskName] = useState('')
 
