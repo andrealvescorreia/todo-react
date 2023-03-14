@@ -1,5 +1,6 @@
 import { useTasksContext } from "../../providers/TasksProvider"
 import React, { useState } from 'react'
+import './styles.css'
 
 export function NewTask(){
     const {setTasks} = useTasksContext();

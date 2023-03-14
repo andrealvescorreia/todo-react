@@ -1,0 +1,44 @@
+.new-task {
+    width: 55%;
+    display: flex;
+    margin-top: 4em;
+    margin-bottom: 1.5em;
+}
+.new-task input{
+    font-size: 1.35em;
+    margin-left: 2.5em;
+    width: 100%;
+    padding: 0.7em;
+    background-color: var(--mediumgrey);
+    border: none;
+    border-radius: 0.25em;
+    outline: none;
+}
+
+.new-task input:hover{
+    background-color: var(--mediumdarkgrey);
+}
+
+.new-task input:focus{
+    background-color: white;
+    outline: 0.15em solid var(--darkgrey);
+}
+
+.new-task ::placeholder{
+    font-weight: bold;
+}
+
+/* Telas grandes */
+@media only screen and (min-width: 600px) {
+    .new-task  {
+        font-size: 12px;
+    }
+}
+
+/* Telas pequenas */
+@media only screen and (max-width: 600px) {
+    .new-task  {
+        font-size: 14px;
+        width: 90%;
+    }
+}
