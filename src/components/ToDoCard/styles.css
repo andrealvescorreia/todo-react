@@ -63,6 +63,10 @@
     cursor: pointer;
 }
 
+.task-checkbox:focus svg {
+    fill: var(--darkgrey);
+}
+
 .completed .task-checkbox {
     background-color: #1DA82B;
     border-color:#1DA82B;
@@ -99,6 +103,10 @@
 }
 
 .card:hover .task-edit svg {
+    fill: var(--darkgrey);
+}
+
+.task-edit:focus svg{
     fill: var(--darkgrey);
 }
 
