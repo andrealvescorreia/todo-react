@@ -1,4 +1,5 @@
 import './styles.css'
+import './modal-style.css'
 import React, { useState, useEffect } from 'react'
 import { useTasksContext } from "../../providers/TasksProvider"
 import Modal from 'react-modal'
