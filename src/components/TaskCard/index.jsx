@@ -76,21 +76,35 @@ export function TaskCard({ task }) {
             <Modal 
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
-                contentLabel="Modal louco"
+                contentLabel="Editar Tarefa"
                 overlayClassName="modal-overlay"
                 className="modal-content"
             >
-                <input
-                    value={thisTaskEdited.name}
-                    type="text"
-                    onChange = {e => setThisTaskEdited({
+                <div className='modal-header'>
+
+                    <button className="task-checkbox" onClick={()=>{
+                        setThisTaskEdited({
                             ...thisTaskEdited,
-                            name: e.target.value
+                            completed: !thisTaskEdited.completed
                         })
-                    }
-                />
+                    }}>
+                        <CheckSvg/>
+                    </button>
+
+                    <input
+                        className="edit-name"
+                        value={thisTaskEdited.name}
+                        type="text"
+                        onChange = {e => setThisTaskEdited({
+                                ...thisTaskEdited,
+                                name: e.target.value
+                            })
+                        }
+                    />
+                </div>
 
                 <input
+                    className="edit-description"
                     value={thisTaskEdited.description}
                     type="text"
                     onChange = {e => setThisTaskEdited({
@@ -99,9 +113,14 @@ export function TaskCard({ task }) {
                         })
                     }
                 />
-                <button onClick={deleteThisTask}>Deletar</button>
-                <button onClick={cancelEdit}>Cancelar</button>
-                <button onClick={saveEdit}>Salvar</button>
+
+                <div className="modal-footer">
+                    <button onClick={deleteThisTask}>Deletar</button>
+                    <button onClick={cancelEdit}>Cancelar</button>
+                    <button onClick={saveEdit}>Salvar</button>
+                </div>
+
+                
             </Modal>
 
         </div>

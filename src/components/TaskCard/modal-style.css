@@ -11,8 +11,40 @@
 }
 
 .modal-content{
-    background-color: red;
+    background-color: white;
     width: 65%;
-    padding: 10px;
+    padding-bottom:1em;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.modal-header .task-checkbox{
+    min-width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-name {
+    width: 50%;
+}
+
+.edit-name{
+    font-size: 1.35em;
+   
+    width: 100%;
+    padding-right: 1em;
+    
+    border: none;
+    border-radius: 0.25em;
+    outline: none;
 }
