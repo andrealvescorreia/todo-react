@@ -1,5 +1,5 @@
 import { useTasksContext } from "../../providers/TasksProvider"
-import { ToDoCard } from "../ToDoCard";
+import { TaskCard } from "../TaskCard";
 import './styles.css'
 export function TasksList() {
     const {tasks} = useTasksContext();
@@ -7,7 +7,7 @@ export function TasksList() {
         <div className="tasks-list">
             {
                 tasks.map(task =>
-                    <ToDoCard
+                    <TaskCard
                         key={task.timeOfInclusion}
                         task={task}
                     />

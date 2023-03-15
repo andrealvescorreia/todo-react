@@ -7,7 +7,7 @@ import { PenSvg } from '../../assets/PenSvg'
 import { CheckSvg } from '../../assets/CheckSvg'
 Modal.setAppElement("#root")
 
-export function ToDoCard({ task }) {
+export function TaskCard({ task }) {
     const [thisTask, setThisTask] = useState(task)
     const [thisTaskEdited, setThisTaskEdited] = useState(thisTask)
 
