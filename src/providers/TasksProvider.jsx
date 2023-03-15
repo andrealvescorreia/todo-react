@@ -12,7 +12,39 @@ const exampleTasks = [
     {
         name: "Tarefa 3",
         timeOfInclusion: '2'
-    }
+    },
+    {
+        name: "Tarefa 1",
+        timeOfInclusion: '3'
+    },
+    {
+        name: "Tarefa 3",
+        timeOfInclusion: '4'
+    },
+    {
+        name: "Tarefa 3",
+        timeOfInclusion: '5'
+    },
+    {
+        name: "Tarefa 3",
+        timeOfInclusion: '6'
+    },
+    {
+        name: "Tarefa 3",
+        timeOfInclusion: '7'
+    },
+    {
+        name: "Tarefa 3",
+        timeOfInclusion: '8'
+    },
+    {
+        name: "Tarefa 3",
+        timeOfInclusion: '9'
+    },
+    {
+        name: "Tarefa 3",
+        timeOfInclusion: '10'
+    },
 ]
 
 const TasksProvider = ({children}) => {
