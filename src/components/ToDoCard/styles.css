@@ -63,9 +63,7 @@
     cursor: pointer;
 }
 
-.task-checkbox:focus svg {
-    fill: var(--darkgrey);
-}
+
 
 .completed .task-checkbox {
     background-color: #1DA82B;
