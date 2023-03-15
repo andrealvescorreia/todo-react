@@ -94,10 +94,10 @@ export function TaskCard({ task }) {
                     value={thisTaskEdited.description}
                     type="text"
                     onChange = {e => setThisTaskEdited({
-                        ...thisTaskEdited,
-                        description: e.target.value
-                    })
-                }
+                            ...thisTaskEdited,
+                            description: e.target.value
+                        })
+                    }
                 />
                 <button onClick={deleteThisTask}>Deletar</button>
                 <button onClick={cancelEdit}>Cancelar</button>
