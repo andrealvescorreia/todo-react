@@ -19,6 +19,7 @@
 .task-name {
     font-weight: normal;
     line-height: 110%;
+    width: 100%;
 }
 
 .card-body {

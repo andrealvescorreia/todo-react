@@ -41,6 +41,7 @@
     align-items: center;
     width: 100%;
     padding-top: 0.5em;
+    padding-left: 0.5em;
 }
 
 .modal-header .task-checkbox{
@@ -66,7 +67,7 @@
     font-size: 1em;
    
     width: 100%;
-    padding-left: 3.5em;
+    padding-left: 4em;
     padding-right: 1em;
     
     border: none;
@@ -173,5 +174,11 @@ hr {
     .modal-footer button {
         width: 3em;
         height: 2.5em;
+    }
+    .modal-header{
+        padding:0.1em;
+    }
+    .edit-description{
+        padding-left: 1em;
     }
 }

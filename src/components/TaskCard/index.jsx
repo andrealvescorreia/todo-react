@@ -2,13 +2,14 @@ import './styles.css'
 import './modal-style.css'
 import React, { useState, useEffect } from 'react'
 import { useTasksContext } from "../../providers/TasksProvider"
-import Modal from 'react-modal'
-import { PenSvg } from '../../assets/PenSvg'
-import { CheckSvg } from '../../assets/CheckSvg'
+
+import { PenSvg }      from '../../assets/PenSvg'
+import { CheckSvg }    from '../../assets/CheckSvg'
 import { TrashCanSvg } from '../../assets/TrashCanSvg'
+import { XMarkSvg }    from '../../assets/XMarkSvg'
 
 import TextareaAutosize from 'react-textarea-autosize';
-import { XMarkSvg } from '../../assets/XMarkSvg'
+import Modal from 'react-modal'
 Modal.setAppElement("#root")
 
 export function TaskCard({ task }) {
@@ -35,7 +36,6 @@ export function TaskCard({ task }) {
         closeModal()
     }
     
-
     
 
     function handleCheckBoxClick() {
@@ -60,22 +60,30 @@ export function TaskCard({ task }) {
         setTasks(updatedTasks)
     }
 
+
+
+
+
+
+
     return (
         <div className={"card" + (thisTask.completed ? " completed" : "")} >
+            
+
             <div className="card-header">
                 <button className="task-checkbox" type="button" onClick={handleCheckBoxClick}>
                     <CheckSvg/>
                 </button>
 
-                <h2 className="task-name">{thisTask.name}</h2>
+                <h2 className="task-name"  onClick={openModal}>{thisTask.name} </h2>
 
                 <button className="task-edit" type="button" onClick={openModal}>
                     <PenSvg/>
                 </button>
             </div>
             
-            <div className="card-body">
-                <p className="task-description">{thisTask.description}</p>
+            <div className="card-body" onClick={openModal}>
+                <p className="task-description" onClick={openModal} >{thisTask.description}</p>
             </div>
 
             <Modal 
@@ -99,7 +107,6 @@ export function TaskCard({ task }) {
                     <input
                         className="edit-name"
                         value={thisTaskEdited.name}
-                        type="text"
                         onChange = {e => setThisTaskEdited({
                                 ...thisTaskEdited,
                                 name: e.target.value
@@ -108,14 +115,12 @@ export function TaskCard({ task }) {
                     />
                 </div>
            
-                
                 <TextareaAutosize 
                     className="edit-description"
                     minRows={8}
                     maxRows={14}  
                     name="Task description" 
                     value={thisTaskEdited.description}
-                    type="text"
                     onChange = {e => setThisTaskEdited({
                             ...thisTaskEdited,
                             description: e.target.value
@@ -128,8 +133,7 @@ export function TaskCard({ task }) {
                     <button className="delete" onClick={deleteThisTask}>
                         <TrashCanSvg/>
                         <span className="action-name">Deletar</span>
-                        
-                        </button>
+                    </button>
                     <button className="cancel" onClick={cancelEdit}>
                         <XMarkSvg/>
                         <span className="action-name">Cancelar</span>
@@ -140,10 +144,7 @@ export function TaskCard({ task }) {
                         <span className="action-name">Salvar</span>
                     </button>
                 </div>
-
-                
             </Modal>
-
         </div>
     )
 }
