@@ -1,5 +1,5 @@
 .modal-overlay{
-    background-color: rgba(0, 0, 0, 0.164);
+    background-color: rgba(0, 0, 0, 0.26);
     position:fixed;
     top:0;
     bottom:0;
@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .modal-content{
@@ -18,6 +19,21 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    
+}
+
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+    opacity: 0;
 }
 
 .modal-header {
@@ -66,15 +82,25 @@ hr {
 
 .modal-footer button{
     font-size: 1em;
-    width: 5.5em;
+    width: 6em;
     padding: 0.4em 0em;
     
     border: none;
     border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: 500ms;
 }
+
+
 
 .modal-footer button:hover{
     cursor: pointer;
+}
+
+.modal-footer button svg{
+    width: 1em;
 }
 
 .modal-footer {
@@ -108,8 +134,44 @@ hr {
     background-color: #3096E0;
     color: white;
     margin-left: 1.5em;
+    
+}
+
+.save svg {
+    fill: white;
+}
+
+.cancel svg {
+    fill: var(--darkgrey);
+}
+
+.delete svg {
+    fill: white;
 }
 
 .save:hover{
     background-color: #0080db;
+}
+
+
+/* Telas grandes */
+@media only screen and (min-width: 600px) {
+    .modal-content {
+        font-size: 16px;
+    }
+}
+
+/* Telas pequenas */
+@media only screen and (max-width: 600px) {
+    .modal-content {
+        font-size: 18px;
+        width: 90%;
+    }
+    .modal-footer button .action-name{
+        display: none;
+    }
+    .modal-footer button {
+        width: 3em;
+        height: 2.5em;
+    }
 }

@@ -5,8 +5,10 @@ import { useTasksContext } from "../../providers/TasksProvider"
 import Modal from 'react-modal'
 import { PenSvg } from '../../assets/PenSvg'
 import { CheckSvg } from '../../assets/CheckSvg'
+import { TrashCanSvg } from '../../assets/TrashCanSvg'
 
 import TextareaAutosize from 'react-textarea-autosize';
+import { XMarkSvg } from '../../assets/XMarkSvg'
 Modal.setAppElement("#root")
 
 export function TaskCard({ task }) {
@@ -71,7 +73,7 @@ export function TaskCard({ task }) {
                     <PenSvg/>
                 </button>
             </div>
-
+            
             <div className="card-body">
                 <p className="task-description">{thisTask.description}</p>
             </div>
@@ -123,10 +125,20 @@ export function TaskCard({ task }) {
                 />
                 <hr />
                 <div className="modal-footer">
-                    <button className="delete" onClick={deleteThisTask}>Deletar</button>
-                    <button className="cancel" onClick={cancelEdit}>Cancelar</button>
+                    <button className="delete" onClick={deleteThisTask}>
+                        <TrashCanSvg/>
+                        <span className="action-name">Deletar</span>
+                        
+                        </button>
+                    <button className="cancel" onClick={cancelEdit}>
+                        <XMarkSvg/>
+                        <span className="action-name">Cancelar</span>
+                    </button>
                     
-                    <button className="save" onClick={saveEdit}>Salvar</button>
+                    <button className="save" onClick={saveEdit}>
+                        <CheckSvg/>
+                        <span className="action-name">Salvar</span>
+                    </button>
                 </div>
 
                 

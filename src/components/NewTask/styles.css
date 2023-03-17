@@ -13,6 +13,7 @@
     border: none;
     border-radius: 0.25em;
     outline: none;
+    transition: 500ms;
 }
 
 .new-task input:hover{
