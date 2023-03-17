@@ -5,6 +5,8 @@ import { useTasksContext } from "../../providers/TasksProvider"
 import Modal from 'react-modal'
 import { PenSvg } from '../../assets/PenSvg'
 import { CheckSvg } from '../../assets/CheckSvg'
+
+import TextareaAutosize from 'react-textarea-autosize';
 Modal.setAppElement("#root")
 
 export function TaskCard({ task }) {
@@ -15,6 +17,7 @@ export function TaskCard({ task }) {
 
     useEffect(() => {
         updateThisTask()
+        setThisTaskEdited(thisTask)
     }, [thisTask])
 
     const [modalIsOpen, setIsOpen] = useState(false)
@@ -80,7 +83,7 @@ export function TaskCard({ task }) {
                 overlayClassName="modal-overlay"
                 className="modal-content"
             >
-                <div className='modal-header'>
+                <div className={'modal-header'+ (thisTaskEdited.completed ? " completed" : "")}>
 
                     <button className="task-checkbox" onClick={()=>{
                         setThisTaskEdited({
@@ -102,9 +105,13 @@ export function TaskCard({ task }) {
                         }
                     />
                 </div>
-
-                <input
+           
+                
+                <TextareaAutosize 
                     className="edit-description"
+                    minRows={8}
+                    maxRows={14}  
+                    name="Task description" 
                     value={thisTaskEdited.description}
                     type="text"
                     onChange = {e => setThisTaskEdited({
@@ -112,12 +119,14 @@ export function TaskCard({ task }) {
                             description: e.target.value
                         })
                     }
+                    placeholder="Descrição..."
                 />
-
+                <hr />
                 <div className="modal-footer">
-                    <button onClick={deleteThisTask}>Deletar</button>
-                    <button onClick={cancelEdit}>Cancelar</button>
-                    <button onClick={saveEdit}>Salvar</button>
+                    <button className="delete" onClick={deleteThisTask}>Deletar</button>
+                    <button className="cancel" onClick={cancelEdit}>Cancelar</button>
+                    
+                    <button className="save" onClick={saveEdit}>Salvar</button>
                 </div>
 
                 

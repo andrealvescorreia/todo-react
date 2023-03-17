@@ -14,7 +14,7 @@
     background-color: white;
     width: 65%;
     padding-bottom:1em;
-    border-radius: 5px;
+    border-radius: 0.5em;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -24,6 +24,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+    padding-top: 0.5em;
 }
 
 .modal-header .task-checkbox{
@@ -34,9 +35,6 @@
     justify-content: center;
 }
 
-.edit-name {
-    width: 50%;
-}
 
 .edit-name{
     font-size: 1.35em;
@@ -45,6 +43,73 @@
     padding-right: 1em;
     
     border: none;
-    border-radius: 0.25em;
     outline: none;
+}
+
+.edit-description{
+    font-size: 1em;
+   
+    width: 100%;
+    padding-left: 3.5em;
+    padding-right: 1em;
+    
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+hr {
+    border-top: 0.15em solid var(--darkgrey);
+    width: 100%;
+    margin-bottom: 0.8em;
+}
+
+.modal-footer button{
+    font-size: 1em;
+    width: 5.5em;
+    padding: 0.4em 0em;
+    
+    border: none;
+    border-radius: 0.5em;
+}
+
+.modal-footer button:hover{
+    cursor: pointer;
+}
+
+.modal-footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+.delete {
+    background-color: #FF5050;
+    color:white;
+}
+
+.delete:hover{
+    background-color: #ff2d2d;
+}
+
+.cancel{
+    margin-left: auto;
+    background-color: var(--lightgrey);
+}
+
+.cancel:hover{
+    background-color: var(--mediumgrey);
+}
+
+
+.save{
+    background-color: #3096E0;
+    color: white;
+    margin-left: 1.5em;
+}
+
+.save:hover{
+    background-color: #0080db;
 }
